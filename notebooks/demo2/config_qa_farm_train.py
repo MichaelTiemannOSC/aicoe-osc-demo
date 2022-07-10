@@ -15,7 +15,7 @@ _logger = logging.getLogger(__name__)
 # or any hugging face model e.g. deepset/roberta-base-squad2, a-ware/roberta-large-squadv2
 # Full list at huggingface.co/models
 base_lm_model = "a-ware/roberta-large-squadv2"
-project_name = ""
+project_name = config.EXPERIMENT_NAME
 
 
 class QAConfig(Config):

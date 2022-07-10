@@ -20,8 +20,14 @@ BASE_EXTRACTION_FOLDER = DATA_FOLDER / "extraction"
 BASE_CURATION_FOLDER = DATA_FOLDER / "curation"
 BASE_INFER_KPI_FOLDER = DATA_FOLDER / "infer_KPI"
 
-CHECKPOINT_S3_PREFIX = "aicoe-osc-demo/saved_models"
-DATA_S3_PREFIX = "aicoe-osc-demo/pipeline_run/samples_1"
+# Set the experiment name here; this will be the prefix for your experiment files on s3
+EXPERIMENT_NAME = "test_cdp2"
+SAMPLE_PDF = "NextEra Energy 2021 CDP Response.pdf"
+
+CHECKPOINT_S3_PREFIX = f"{EXPERIMENT_NAME}/saved_models"
+
+# From setup_experiment.ipynb
+DATA_S3_PREFIX=f"{EXPERIMENT_NAME}/pipeline_run/small"
 BASE_PDF_S3_PREFIX = f"{DATA_S3_PREFIX}/pdfs"
 BASE_ANNOTATION_S3_PREFIX = f"{DATA_S3_PREFIX}/annotations"
 BASE_EXTRACTION_S3_PREFIX = f"{DATA_S3_PREFIX}/extraction"
@@ -29,7 +35,7 @@ BASE_CURATION_S3_PREFIX = f"{DATA_S3_PREFIX}/curation"
 BASE_INFER_RELEVANCE_S3_PREFIX = f"{DATA_S3_PREFIX}/infer_relevance"
 BASE_INFER_KPI_S3_PREFIX = f"{DATA_S3_PREFIX}/infer_KPI"
 
-BASE_INFER_KPI_TABLE_S3_PREFIX = "aicoe-osc-demo/KPI_table"
+BASE_INFER_KPI_TABLE_S3_PREFIX = f"{EXPERIMENT_NAME}/KPI_table"
 
 ckpt = "icdar_19b2_v2.pth"
 config_file = "cascade_mask_rcnn_hrnetv2p_w32_20e_v2.py"
@@ -111,7 +117,7 @@ class CurateConfig:
 TextKPIInferenceCurator_kwargs = {
     "annotation_folder": BASE_ANNOTATION_FOLDER,
     "agg_annotation": BASE_ANNOTATION_FOLDER
-    / "20201030 1Qbit aggregated_annotations_needs_correction.xlsx",
+    / "20220709 CDP aggregated_annotations_needs_correction.xlsx",
     "extracted_text_json_folder": BASE_EXTRACTION_FOLDER,
     "output_squad_folder": DATA_FOLDER / "squad",
     "relevant_text_path": DATA_FOLDER / "infer_relevance" / "*.csv",
