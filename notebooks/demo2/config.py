@@ -23,6 +23,7 @@ BASE_INFER_KPI_FOLDER = DATA_FOLDER / "infer_KPI"
 # Set the experiment name here; this will be the prefix for your experiment files on s3
 EXPERIMENT_NAME = "test_cdp2"
 SAMPLE_PDF = "NextEra Energy 2021 CDP Response.pdf"
+KPI_MAPPING_CSV = "cdp_mapping.csv"
 
 CHECKPOINT_S3_PREFIX = f"{EXPERIMENT_NAME}/saved_models"
 
