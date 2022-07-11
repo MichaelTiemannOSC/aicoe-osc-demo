@@ -27,8 +27,9 @@ KPI_MAPPING_CSV = "cdp_mapping.csv"
 
 CHECKPOINT_S3_PREFIX = f"{EXPERIMENT_NAME}/saved_models"
 
-# From setup_experiment.ipynb
-DATA_S3_PREFIX=f"{EXPERIMENT_NAME}/pipeline_run/small"
+# From setup_experiments.ipynb; Copy the output of this code into config.py
+DATA_S3_PREFIX="test_cdp2/pipeline_run/cdp"
+
 BASE_PDF_S3_PREFIX = f"{DATA_S3_PREFIX}/pdfs"
 BASE_ANNOTATION_S3_PREFIX = f"{DATA_S3_PREFIX}/annotations"
 BASE_EXTRACTION_S3_PREFIX = f"{DATA_S3_PREFIX}/extraction"
